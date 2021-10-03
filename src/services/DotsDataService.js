@@ -25,8 +25,8 @@ class DotsDataService {
     return http.delete(`/dots`);
   }
 
-  findByTitle(title) {
-    return http.get(`/dots?title=${title}`);
+  findByTitle(findme) {
+    return http.get(`/dots?witness=${findme}`);
   }
 }
 
