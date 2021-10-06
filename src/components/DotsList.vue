@@ -19,19 +19,56 @@
         </div>
       </div>
     </div>
+    <div>
+      <button
+        class="btn btn-outline-secondary"
+        type="button"
+        @click="toggleFields"
+      >
+        Toggle Fields
+      </button>
+    </div>
+    <div>
+      <p v-if="fieldList">true</p>
+      <p v-else>false</p>
+    </div>
     <div class="col-md-6">
       <h4>Dots List</h4>
-      <ul class="list-group">
-        <li
-          class="list-group-item"
-          :class="{ active: index == currentIndex }"
-          v-for="(wit, index) in dots"
-          :key="index"
-          @click="setActiveTutorial(tutorial, index)"
-        >
-          {{ wit.book }} {{ wit.witness }} {{ wit.w }}
-        </li>
-      </ul>
+      <div v-if="fieldList">
+        <ul class="list-group">
+          <li
+            class="list-group-item"
+            :class="{ active: index == currentIndex }"
+            v-for="(wit, index) in dots"
+            :key="index"
+            @click="setActiveTutorial(tutorial, index)"
+          >
+            {{ index + 1 }} {{ wit.book }} {{ wit.w }} {{ wit.witness }}
+          </li>
+        </ul>
+      </div>
+      <div v-else>
+        <table>
+          <tr>
+            <th>ID</th>
+            <th>Book</th>
+            <th>Witness</th>
+            <th>W</th>
+            <th>Col 1</th>
+            <th>Col 2</th>
+            <th>Col 3</th>
+          </tr>
+          <tr v-for="(wit, index) in dots" :key="index">
+            <td>{{ wit.id }}</td>
+            <td>{{ wit.book }}</td>
+            <td>{{ wit.witness }}</td>
+            <td>{{ wit.w }}</td>
+            <td>{{ wit.verses[1] }}</td>
+            <td>{{ wit.verses[2] }}</td>
+            <td>{{ wit.verses[3] }}</td>
+          </tr>
+        </table>
+      </div>
     </div>
   </div>
 </template>
@@ -44,6 +81,8 @@ export default {
   data() {
     return {
       dots: [],
+      fieldList: true,
+      limitedFields: [],
       currentTutorial: null,
       currentIndex: -1,
       title: "",
@@ -59,6 +98,13 @@ export default {
         .catch((e) => {
           console.log(e);
         });
+    },
+
+    // select some fields
+    setLimitedFields() {},
+
+    setFieldList(aThing) {
+      this.fieldList = aThing;
     },
 
     refreshList() {
@@ -83,6 +129,11 @@ export default {
         });
     },
 
+    toggleFields() {
+      this.fieldList = !this.fieldList;
+    },
+
+    // should do this locally, in the cached "dots" property, not hit the database
     searchTitle() {
       DotsDataService.findByTitle(this.title)
         .then((response) => {
@@ -97,6 +148,7 @@ export default {
   },
   mounted() {
     this.retrievedots();
+    this.setFieldList(true);
   },
 };
 </script>
