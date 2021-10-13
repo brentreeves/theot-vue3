@@ -17,7 +17,9 @@
     "popper.js": "^1.16.1",
     "vue": "^3.0.0-beta.1",
     "vue-router": "4",
-    "vuex": "^4.0.0-alpha.1"
+    "vue-simple-search-dropdown": "^1.0.1",
+    "vuex": "^4.0.0-alpha.1",
+    "yarn": "^1.22.15"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
@@ -36,5 +38,21 @@
     "eslint-plugin-vue": "^7.0.0-alpha.0",
     "geckodriver": "^2.0.4",
     "prettier": "^2.2.1"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {
+      "vue/no-multiple-template-root": "off"
+    }
   }
 }
