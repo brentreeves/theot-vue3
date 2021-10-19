@@ -1,74 +1,58 @@
 <template>
-  <div class="input-group mb-3">
-    <div class="input-group-prepend">
-      <button
-        class="btn btn-outline-secondary"
-        type="button"
-        @click="toggleFields"
-      >
-        Toggle Fields
-      </button>
+  <div>
+    <div>
+      <div>
+        <button type="button" @click="toggleFields">Toggle Fields</button>
+      </div>
+      <div>
+        <button type="button" @click="searchTitle">Search</button>
+      </div>
+      <input type="text" placeholder="Search by title" v-model="title" />
     </div>
-    <div class="input-group-prepend">
-      <button
-        class="btn btn-outline-secondary"
-        type="button"
-        @click="searchTitle"
-      >
-        Search
-      </button>
-    </div>
-    <input
-      type="text"
-      class="form-control"
-      placeholder="Search by title"
-      v-model="title"
-    />
-  </div>
 
-  <!-- <div>
+    <!-- <div>
     <p v-if="fieldList">true</p>
     <p v-else>false</p>
   </div> -->
-  <div class="col-md-12">
-    <h4>Dots List</h4>
-    <div v-if="fieldList">
-      <div class="list row">
-        <ul class="list-group">
-          <li
-            class="list-group-item"
-            :class="{ active: index == currentIndex }"
-            v-for="(wit, index) in dots"
-            :key="index"
-            @click="setActiveTutorial(tutorial, index)"
-          >
-            {{ index + 1 }} {{ wit.book }} {{ wit.w }} {{ wit.witness }}
-          </li>
-        </ul>
+    <div>
+      <h4>Dots List</h4>
+      <div v-if="fieldList">
+        <div>
+          <ul>
+            <li
+              :class="{ active: index == currentIndex }"
+              v-for="(wit, index) in dots"
+              :key="index"
+              @click="setActiveTutorial(tutorial, index)"
+            >
+              {{ index + 1 }} {{ wit.book }} {{ wit.w }} {{ wit.witness }}
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-    <div v-else>
-      <div class="container-fluid">
-        <table>
-          <tr class="border">
-            <th>ID</th>
-            <th>Book</th>
-            <th>Witness</th>
-            <th>W</th>
-            <th v-for="(n, index) in 10" :key="index">
-              {{ n }}
-            </th>
-          </tr>
-          <tr v-for="(wit, index) in dots" :key="index">
-            <td class="border">{{ wit.id }}</td>
-            <td class="border">{{ wit.book }}</td>
-            <td class="border">{{ wit.witness }}</td>
-            <td class="border">{{ wit.w }}</td>
-            <td class="border" v-for="(cc, index) in wit.verses" :key="index">
-              {{ cc }}
-            </td>
-          </tr>
-        </table>
+      <div v-else>
+        <div>
+          <table>
+            <tr>
+              <th>ID</th>
+              <th>Book</th>
+              <th>Witness</th>
+              <th>W</th>
+              <th v-for="(n, index) in 10" :key="index">
+                {{ n }}
+              </th>
+            </tr>
+            <tr v-for="(wit, index) in dots" :key="index">
+              <td>{{ wit.id }}</td>
+              <td>{{ wit.book }}</td>
+              <td>{{ wit.witness }}</td>
+              <td>{{ wit.w }}</td>
+              <td v-for="(cc, index) in wit.verses" :key="index">
+                {{ cc }}
+              </td>
+            </tr>
+          </table>
+        </div>
       </div>
     </div>
   </div>

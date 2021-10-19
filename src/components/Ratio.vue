@@ -1,12 +1,7 @@
 <template>
   <h1>Ratio</h1>
- 
 </template>
 
-<script>
+<script></script>
 
-</script>
-
-<style>
-
-</style>
+<style></style>

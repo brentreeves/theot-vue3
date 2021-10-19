@@ -1,12 +1,7 @@
 <template>
   <h1>Ones</h1>
- 
 </template>
 
-<script>
+<script></script>
 
-</script>
-
-<style>
-
-</style>
+<style></style>

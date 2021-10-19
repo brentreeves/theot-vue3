@@ -1,12 +1,7 @@
 <template>
-  <h1>Populate Cluster Profiles </h1>
- 
+  <h1>Populate Cluster Profiles</h1>
 </template>
 
-<script>
+<script></script>
 
-</script>
-
-<style>
-
-</style>
+<style></style>

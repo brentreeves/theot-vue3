@@ -1,12 +1,7 @@
 <template>
   <h1>Create Cluster Profile Tables</h1>
- 
 </template>
 
-<script>
+<script></script>
 
-</script>
-
-<style>
-
-</style>
+<style></style>

@@ -1,12 +1,7 @@
 <template>
-  <h1>Populate R Scripts </h1>
- 
+  <h1>Populate R Scripts</h1>
 </template>
 
-<script>
+<script></script>
 
-</script>
-
-<style>
-
-</style>
+<style></style>
