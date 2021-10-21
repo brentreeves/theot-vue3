@@ -15,39 +15,35 @@
     <p v-else>false</p>
   </div> -->
     <div>
-      <h4>Dots List</h4>
-      <div v-if="fieldList">
+      <h4>Ratios List ({{ fieldList }})</h4>
+      <div v-if="!fieldList">
         <div>
           <ul>
             <li
               :class="{ active: index == currentIndex }"
-              v-for="(wit, index) in dots"
+              v-for="(wit, index) in ratios"
               :key="index"
               @click="setActiveTutorial(tutorial, index)"
             >
-              {{ index + 1 }} {{ wit.book }} {{ wit.w }} {{ wit.witness }}
+              {{ index + 1 }} | {{ wit[0] }} | {{ wit[1] }} |
+              {{ wit[2] }}
             </li>
           </ul>
         </div>
       </div>
       <div v-else>
         <div>
-          <table>
+          <table border="1px">
             <tr>
-              <th>ID</th>
-              <th>Book</th>
-              <th>Witness</th>
-              <th>W</th>
-              <th v-for="(n, index) in 10" :key="index">
-                {{ n }}
+              <th v-for="(c, index) in ratios[0]" :key="index">
+                {{ c.split(" ")[0] }}
               </th>
             </tr>
-            <tr v-for="(wit, index) in dots" :key="index">
-              <td>{{ wit.id }}</td>
-              <td>{{ wit.book }}</td>
-              <td>{{ wit.witness }}</td>
-              <td>{{ wit.w }}</td>
-              <td v-for="(cc, index) in wit.verses" :key="index">
+            <tr
+              v-for="(wit, index) in ratios.slice(1, ratios.len)"
+              :key="index"
+            >
+              <td v-for="(cc, index) in wit" :key="index">
                 {{ cc }}
               </td>
             </tr>
@@ -60,12 +56,14 @@
 
 <script>
 import DotsDataService from "../services/DotsDataService";
+import RatiosDataService from "../services/RatiosDataService";
 
 export default {
-  name: "dots-list",
+  name: "ratios-list",
   data() {
     return {
       dots: [],
+      ratios: [],
       fieldList: true,
       limitedFields: [],
       dotsVerseList: [],
@@ -76,6 +74,17 @@ export default {
   },
 
   methods: {
+    retrieveratios() {
+      RatiosDataService.getAll()
+        .then((response) => {
+          this.ratios = response.data;
+          console.log(response.data);
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+    },
+
     retrievedots() {
       DotsDataService.getAll()
         .then((response) => {
@@ -134,7 +143,8 @@ export default {
     },
   },
   mounted() {
-    this.retrievedots();
+    // this.retrievedots();
+    this.retrieveratios();
     this.setFieldList(true);
   },
 };

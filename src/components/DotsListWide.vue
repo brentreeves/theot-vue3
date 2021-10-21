@@ -2,21 +2,16 @@
   <div>
     <div>
       <div>
-        <button type="button" @click="toggleFields">Toggle Fields</button>
+        <button type="drpdwn" @click="toggleFields">Toggle Fields</button>
       </div>
       <div>
         <button type="button" @click="searchTitle">Search</button>
       </div>
       <input type="text" placeholder="Search by title" v-model="title" />
     </div>
-
-    <!-- <div>
-    <p v-if="fieldList">true</p>
-    <p v-else>false</p>
-  </div> -->
     <div>
       <h4>Dots List</h4>
-      <div v-if="fieldList">
+      <div v-if="fieldList == 0">
         <div>
           <ul>
             <li
@@ -30,7 +25,31 @@
           </ul>
         </div>
       </div>
-      <div v-else>
+      <div v-else-if="fieldList == 1">
+        <div>
+          <table>
+            <tr>
+              <th>ID</th>
+              <th>Book</th>
+              <th>Witness</th>
+              <th>W</th>
+              <th v-for="(n, index) in 10" :key="index">
+                {{ n }}
+              </th>
+            </tr>
+            <tr v-for="(wit, index) in dots" :key="index">
+              <td>{{ wit.id }}</td>
+              <td>{{ wit.book }}</td>
+              <td>{{ wit.witness }}</td>
+              <td>{{ wit.w }}</td>
+              <td v-for="(cc, index) in wit.ones" :key="index">
+                {{ cc }}
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div v-else-if="fieldList == 2">
         <div>
           <table>
             <tr>
@@ -66,7 +85,7 @@ export default {
   data() {
     return {
       dots: [],
-      fieldList: true,
+      fieldList: 0,
       limitedFields: [],
       dotsVerseList: [],
       currentTutorial: null,
@@ -117,7 +136,8 @@ export default {
     },
 
     toggleFields() {
-      this.fieldList = !this.fieldList;
+      if (this.fieldList == 2) this.fieldList = 0;
+      else this.fieldList++;
     },
 
     // should do this locally, in the cached "dots" property, not hit the database
@@ -135,7 +155,7 @@ export default {
   },
   mounted() {
     this.retrievedots();
-    this.setFieldList(true);
+    this.setFieldList(0);
   },
 };
 </script>
