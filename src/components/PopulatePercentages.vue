@@ -1,12 +1,7 @@
 <template>
   <h1>Populate Percentages</h1>
- 
 </template>
 
-<script>
+<script></script>
 
-</script>
-
-<style>
-
-</style>
+<style></style>

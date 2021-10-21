@@ -1,12 +1,7 @@
 <template>
   <h1>Display Percentages</h1>
- 
 </template>
 
-<script>
+<script></script>
 
-</script>
-
-<style>
-
-</style>
+<style></style>
