@@ -118,11 +118,6 @@ const routes = [
     name: "populateClusterProfiles",
     component: () => import("./components/PopulateClusterProfiles"),
   },
-  {
-    path: "/login",
-    name: "login",
-    component: () => import("./components/Login"),
-  },
 ];
 
 const router = createRouter({
