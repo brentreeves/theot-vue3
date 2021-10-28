@@ -1,0 +1,55 @@
+ <!-- box-shadow: 0 0 18px 18px #212529 inset; -->
+
+             <div
+              class="col-xl-5 col-xxl-6 d-none d-xl-block text-center"
+              :style="{
+                backgroundImage:
+                  'url(' + require('@/assets/img/manuscript-header3.png') + ')',
+                width: '588px',
+                height: '337px',
+              }"
+            ></div>
+
+
+            Uncaught (in promise) DOMException: String contains an invalid character
+
+<div
+  class="image"
+  v-for="(image, imageIndex) in slideshow"
+  :key="imageIndex"
+  :style="{ backgroundImage: 'url(' + require(`@/assets/${image}`) + ')', width: '300px', height: '200px' }"
+></div>
+
+
+// nope
+require('~@/assets/img/manuscript-header3.png') +
+===
+
+ ERROR  Failed to compile with 1 error                                                                                               4:38:21 PM
+
+This dependency was not found:
+
+* ~@/assets/img/manuscript-header3.png in ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/Home.vue?vue&type=template&id=8dc7cce2
+
+To install it, you can run: npm install --save ~@/assets/img/manuscript-header3.png
+
+happy
+ <div class="d-flex align-items-center justify-content-center">
+              <img
+                src="../assets/img/manuscript-header3.png"
+                height="333"
+                alt="..."
+              />
+            </div>
+
+            not happy
+            <div
+              class="col-xl-5 col-xxl-6 d-none d-xl-block text-center"
+              :style="{
+                backgroundImage:
+                  'url(' +
+                  require('@/assets/img/manuscript-header3.png') +
+                  'width: 588px, height: 337px ',
+              }"
+            ></div>
+

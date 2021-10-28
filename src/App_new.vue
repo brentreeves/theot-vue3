@@ -21,7 +21,7 @@
           >
           <a class="nav-item nav-link" href="/percent">Percent</a>
           <a class="nav-item nav-link" href="/ratios">Ratios</a>
-          <a class="nav-item nav-link" href="/ratios">Obadiah Witnesses</a>
+          <a class="nav-item nav-link" href="/witness">Obadiah Witnesses</a>
           <a class="nav-item nav-link disabled" href="#">Login</a>
         </div>
       </div>
