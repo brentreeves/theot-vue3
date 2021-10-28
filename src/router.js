@@ -3,6 +3,24 @@ import { createWebHistory, createRouter } from "vue-router";
 const routes = [
   {
     path: "/",
+    alias: "/home",
+    name: "home",
+    component: () => import("./components/Home"),
+  },
+  {
+    path: "/",
+    alias: "/",
+    name: "home",
+    component: () => import("./components/Home"),
+  },
+  {
+    path: "/home",
+    alias: "/",
+    name: "home",
+    component: () => import("./components/Home"),
+  },
+  {
+    path: "/tutorials",
     alias: "/tutorials",
     name: "tutorials",
     component: () => import("./components/TutorialsList"),
@@ -26,11 +44,6 @@ const routes = [
     path: "/wideDots",
     name: "wideDots",
     component: () => import("./components/DotsListWide"),
-  },
-  {
-    path: "/home",
-    name: "home",
-    component: () => import("./components/Home"),
   },
   {
     path: "/login",
