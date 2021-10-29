@@ -169,6 +169,20 @@
                       ><i class="bi bi-card-text"></i
                     ></a>
                   </div>
+                  <button class="btn btn-secondary" type="button">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-card-text"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M11 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h1V7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7h1V2zm1 12h2V2h-2v12zm-3 0V7H7v7h2zm-5 0v-3H2v3h2z"
+                      />
+                    </svg>
+                  </button>
                   <h2 class="h5">Text Viewer.</h2>
                   <p class="mb-0">
                     Compare witnesses verse by verse in our online text viewer.
@@ -202,11 +216,24 @@
                       mb-3
                     "
                   >
-                    <a
-                      href="http://ethiopic-tool.firebaseapp.com"
-                      target="_blank"
-                      ><i class="bi-bar-chart-line"></i>
-                    </a>
+                    <button class="btn btn-secondary" fill="currentColor">
+                      <a
+                        href="http://ethiopic-tool.firebaseapp.com"
+                        target="_blank"
+                        ><i class="bi-bar-chart-line"></i>
+                      </a>
+                    </button>
+                  </div>
+                  <div
+                    class="
+                      feature
+                      bg-primary bg-gradient
+                      text-white
+                      rounded-3
+                      mb-3
+                    "
+                  >
+                    <span class="bi-bar-chart-line"></span>
                   </div>
                   <h2 class="h5">Visualization</h2>
                   <p class="mb-0">
