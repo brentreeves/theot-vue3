@@ -163,9 +163,13 @@
                       mb-3
                     "
                   >
-                    <i class="bi bi-card-text"></i>
+                    <a
+                      href="http://ethiopic-tool.firebaseapp.com"
+                      target="_blank"
+                      ><i class="bi bi-card-text"></i
+                    ></a>
                   </div>
-                  <h2 class="h5">Text Viewer</h2>
+                  <h2 class="h5">Text Viewer.</h2>
                   <p class="mb-0">
                     Compare witnesses verse by verse in our online text viewer.
                   </p>
@@ -198,7 +202,11 @@
                       mb-3
                     "
                   >
-                    <i class="bi bi-bar-chart-line"></i>
+                    <a
+                      href="http://ethiopic-tool.firebaseapp.com"
+                      target="_blank"
+                      ><i class="bi-bar-chart-line"></i>
+                    </a>
                   </div>
                   <h2 class="h5">Visualization</h2>
                   <p class="mb-0">
