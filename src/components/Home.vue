@@ -116,7 +116,7 @@
               "
             >
               <img
-                src="../assets/img/Masthead_EMIP.JPG"
+                src="../assets/img/manuscript-header3.png"
                 width="588"
                 height="337"
                 alt="..."
