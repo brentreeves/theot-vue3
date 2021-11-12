@@ -20,53 +20,7 @@
   <body class="d-flex flex-column h-100">
     <main class="flex-shrink-0">
       <!-- Navigation-->
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container px-5">
-          <a class="navbar-brand" href="#">THEOT</a>
-
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-              <li class="nav-item"><a class="nav-link" href="#!">Home</a></li>
-              <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
-              <li class="nav-item">
-                <a class="nav-link" href="#!">Contact</a>
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  href="https://www.dropbox.com/sh/f6xy7rzamntpu03/AAAYAI6MqJkZwSCOLi0ktwc5a?dl=0"
-                  target="_blank"
-                  >Manuscripts</a
-                >
-              </li>
-              <li class="nav-item"><a class="nav-link" href="#!">FAQ</a></li>
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  id="navbarDropdownTools"
-                  href="#"
-                  role="button"
-                  data-toggle="dropdown"
-                  aria-expanded="false"
-                  >Tools</a
-                >
-                <div
-                  class="dropdown-menu"
-                  aria-labelledby="navbarDropdownMenuLink"
-                >
-                  <a
-                    class="dropdown-item"
-                    href="http://ethiopic-tool.firebaseapp.com"
-                    target="_blank"
-                    >Text Viewer</a
-                  >
-                  <a class="dropdown-item" href="visualize">Visualize</a>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+      <NavBar/>
       <!-- Header-->
       <header class="bg-dark py-5">
         <div class="container px-5">
@@ -484,7 +438,12 @@
   </body>
 </template>
 
-<script></script>
+<script>
+import NavBar from "./NavBar"
+export default {
+  components: {NavBar}
+}
+</script>
 
 <style>
 /*!
